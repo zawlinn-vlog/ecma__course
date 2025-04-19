@@ -106,8 +106,6 @@ function a(){
 
   return a + b;
 
-  
-
 }
 
 console.log(a());
@@ -120,4 +118,16 @@ function c(){
   return a + b;
 }
 
+const arr = [10.,20,30,40,50];
 
+
+const arrleng = arr.length;
+
+console.log(arrleng);
+
+// console.log(arr.slice(arrleng - 1));
+
+const newArr = [...arr.splice(arr.length - 1), ...arr]; // splice apply on array but slice isn't applied
+
+const uudtarr = arr.map( val => val === 30 ? 60 : val);
+console.log(newArr, uudtarr);
