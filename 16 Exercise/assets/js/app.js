@@ -125,7 +125,7 @@ Object.defineProperty(newobj, "age", {
   configurable: false,
 });
 
-delete newobj.age; // doesn't work
+// delete newobj.age; // doesn't work
 
 for (let i in newobj) {
   console.log(newobj[i]);
@@ -147,3 +147,56 @@ Object.defineProperties(book, {
 });
 
 console.log(book);
+
+class Emplyees{
+  constructor(name, age){
+    this.name = name;
+    this.age = age;
+  }
+
+
+}
+
+const emplyeesObj = new Emplyees('Zaw Linn', 28);
+
+console.log(emplyeesObj);
+console.log(emplyeesObj.name);
+console.log(emplyeesObj.age);
+console.log(emplyeesObj.hasOwnProperty('name'));
+console.log(emplyeesObj.hasOwnProperty('age'));
+
+
+class Car{
+
+  #price;
+  constructor(brand, price){
+    this.brand = brand;
+    this.#price = price;
+    this.greet = function(){
+      return `hello`;
+    }
+  }
+
+  getPrice(){
+    return this.#price;
+  }
+
+  
+}
+
+
+Car.prototype.getBrand = function(){
+  return this.brand;
+}
+
+
+const carObj = new Car('Toyota',23000);
+
+console.log(carObj);
+
+console.log(carObj.getBrand());
+console.log(carObj.getPrice());
+
+console.log(Car.hasOwnProperty('getBrand'));
+console.log(carObj.hasOwnProperty('greet'));
+console.log(Object.getPrototypeOf(carObj).hasOwnProperty('getPrice'));
