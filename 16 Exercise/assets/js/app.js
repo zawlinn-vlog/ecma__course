@@ -200,3 +200,4 @@ console.log(carObj.getPrice());
 console.log(Car.hasOwnProperty('getBrand'));
 console.log(carObj.hasOwnProperty('greet'));
 console.log(Object.getPrototypeOf(carObj).hasOwnProperty('getPrice'));
+
